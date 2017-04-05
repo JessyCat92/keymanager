@@ -36,9 +36,6 @@ exports.openAddDialog = () => {
 };
 
 exports.closeDialog = () => {
-    // dialog.close();
     let dialog = require("electron").remote.require("./scripts/dataStore").getDialog();
-    console.log(dialog);
     dialog.destroy();
-    console.log("destroyed");
 };
