@@ -9,8 +9,8 @@ $("#closeAddDialog").click(function(){
 });
 
 $("#addAddDialog").click(function() {
-    let name = $("#nameOfGame").val();
-    let key = $("#key").val();
+    const name = $("#nameOfGame").val();
+    const key = $("#key").val();
 
     require("electron").remote.require("./scripts/dataStore").getReader().addSteamKey(name, key, () => {
         const remote = require('electron').remote;
