@@ -12,8 +12,35 @@ exports.openAddDialog = () => {
 
     const remote = require('electron').remote;
     const BrowserWindow = remote.BrowserWindow;
+    const mainWindow = BrowserWindow.getAllWindows()[0];
+    const pos = mainWindow.getPosition();
+    const size = mainWindow.getSize();
 
-    dialog = new BrowserWindow({width: 460, height:240, frame:false});
+    dialog = new BrowserWindow(
+        {
+            width: 460,
+            x: (pos[0] + size[0]/2 - 230),
+            height:240,
+            y: (pos[1] + size[1]/2 - 120),
+            frame:false,
+            parent: BrowserWindow.getAllWindows()[0]
+        });
+
+    mainWindow.on('minimize', () => {
+        dialog.minimize();
+    });
+
+    mainWindow.on('restore', () => {
+        dialog.restore();
+    });
+
+    mainWindow.on('move', () => {
+        const mainWindow = BrowserWindow.getAllWindows()[0];
+        const pos = mainWindow.getPosition();
+        const size = mainWindow.getSize();
+
+        dialog.setPosition((pos[0] + size[0]/2 - 230), (pos[1] + size[1]/2 - 120), true);
+    });
 
     // and load the index.html of the app.
     dialog.loadURL(url.format({
