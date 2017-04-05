@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new SteamKey</title>
+    <script>if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }</script>
+
+    <!-- normal script imports etc  -->
+    <script type="text/javascript" src="bootstrap/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container" style="padding: 15px;">
+
+    <div class="form-group">
+        <label for="nameOfGame">Name of Game</label>
+        <input type="text" class="form-control" id="nameOfGame" placeholder="Spielname"/>
+    </div>
+    <div class="form-group">
+        <label for="key">Key</label>
+        <input type="text" class="form-control" id="key" placeholder="XXXX-XXXX-XXXX-XXXX"/>
+    </div>
+    <button class="btn btn-success">Hinzufügen</button>
+    <button class="btn btn-danger" id="closeAddDialog">Abbrechen</button>
+
+</div>
+<script>
+    require("./../scripts/renderDialog");
+</script>
+</body>
+</html>

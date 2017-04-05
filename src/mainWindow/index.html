@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SteamKey - Manager</title>
+    <!-- Insert this line above script imports  -->
+    <script>if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }</script>
+
+    <!-- normal script imports etc  -->
+    <script type="text/javascript" src="bootstrap/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <script>if (window.module) module = window.module;</script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <style type="text/css">
+        .scroll {
+            height: 340px;
+            max-height: 340px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="btn-group">
+    <button class="btn btn-success" id="addKey">Key Hinzufügen</button>
+    <button class="btn btn-info" id="refresh">Refresh</button>
+</div>
+<div class="scroll">
+    <table class="table table-hover" id="keyTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Key</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<script>
+    // You can also require other files to run in this process
+    require('./../renderer.js');
+</script>
+</body>
+</html>
