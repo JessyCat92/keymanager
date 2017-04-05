@@ -13,6 +13,10 @@ $("#addAddDialog").click(function() {
     let key = $("#key").val();
 
     require("electron").remote.require("./scripts/dataStore").getReader().addSteamKey(name, key, () => {
+        const remote = require('electron').remote;
+        const BrowserWindow = remote.BrowserWindow;
+        const mainWindow = BrowserWindow.getAllWindows()[0];
+        mainWindow.reload();
         d.closeDialog();
     });
 });
