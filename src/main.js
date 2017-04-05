@@ -1,6 +1,8 @@
 /**
  * Created by Geramy92 on 2017-04-04.
  */
+require("./express/startApi");
+
 const electron = require('electron');
 // Module to control application life.
 const app = electron.app;

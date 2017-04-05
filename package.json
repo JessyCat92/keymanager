@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/geramy92/keymanager#readme",
   "dependencies": {
-    "electron": "^1.6.2"
+    "electron": "^1.6.2",
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
