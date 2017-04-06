@@ -49,7 +49,7 @@ exports.openAddDialog = () => {
     }));
 
     // Open the DevTools.
-    dialog.webContents.openDevTools();
+    // dialog.webContents.openDevTools();
 
     // Emitted when the window is closed.
     dialog.on('closed', function () {
